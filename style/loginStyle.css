@@ -1,0 +1,10 @@
+.form-header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Override the gap */
+    justify-content: center;
+}
+
+.modal-content{
+    background-color: #d8e3e3bd !important;
+}
