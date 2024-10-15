@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 
         // Making the API request using axios
-        axios.post('http://localhost:3000/signup', userData)
+        axios.post('https://be-user-record-app.onrender.com/signup', userData)
             .then(function (response) {
                 console.log('Success:', response.data, $('#signupSuccessModal'));
                 $('#error-msg').text('')

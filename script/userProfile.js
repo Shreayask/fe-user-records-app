@@ -1,7 +1,7 @@
 $(document).ready(function () {
     const userId= localStorage.getItem('userId')
     const params = { id: userId }
-    axios.get('http://localhost:3000/getUser', { params })
+    axios.get('https://be-user-record-app.onrender.com/getUser', { params })
       .then(function (response) {
         console.log('res>>', response.data.data)
         const user = response.data.data

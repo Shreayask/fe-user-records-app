@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
     // Fetching users from API
-    axios.get('http://localhost:3000/getUsers')
+    axios.get('https://be-user-record-app.onrender.com/getUsers')
         .then(function (response) {
             const users = response.data.data;
             $('#user-count').text(`${users.length}`)
@@ -38,7 +38,7 @@ $(document).ready(function () {
     //fetch individual user's detail
     function fetchUser(userId) {
         const params = { id: userId }
-        axios.get('http://localhost:3000/getUser', { params })
+        axios.get('https://be-user-record-app.onrender.com/getUser', { params })
             .then(function (response) {
                 $('.user-detail-section').empty();
                 const userDetails = response.data.data

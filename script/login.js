@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 
       // Making the API request using axios
-      axios.get('http://localhost:3000/login', { params })
+      axios.get('https://be-user-record-app.onrender.com/login', { params })
         .then(function (response) {
           $('#error-msg').text('')
 
