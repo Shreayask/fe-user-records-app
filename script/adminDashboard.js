@@ -23,7 +23,7 @@ $(document).ready(function () {
                             <th scope="row">${index + 1}</th>
                             <td>${user.name}</td>
                             <td>${user.email}</td>
-                            <td><span style='margin-left:2rem;' id='view-button' data-user-id=${user._id}><i class="bi bi-eye-fill" style='color: #2a69c5;'></i></span></td>
+                            <td><span style='margin-left:2rem;cursor:pointer' id='view-button' data-user-id=${user._id}><i class="bi bi-eye-fill" style='color: #2a69c5;'></i></span></td>
                         </tr>
                     `;
                 // Append the new row to the table body
