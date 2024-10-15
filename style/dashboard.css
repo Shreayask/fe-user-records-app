@@ -1,0 +1,51 @@
+.dashboard-container{
+    width: 98%;
+    margin: auto;
+    flex-direction: column;
+}
+.card-container{
+    height: 5.5rem;
+    width: 18rem;
+    background-color: rgb(240, 239, 239);
+    margin-top: 2rem;
+    margin-left: 5rem;
+    box-shadow: 2px 2px 2px 2px #bfbbbb;
+    margin: auto;
+}
+.table-container{
+    width: 60%;
+    margin: auto;
+    padding-top: 4rem;
+}
+.user-detail-section{
+    color:#302f46
+}
+
+.view-user-modal{
+    background-color:#f1f1f1 !important ;
+}
+
+.user-detail-container{
+    width: 30%;
+    background-color:#818b862b;
+    height: 360px;
+    margin: auto;
+    box-shadow: 4px 2px 6px 3px #6f75695c;
+}
+
+.user-detail-text{
+    font-size: 21px;
+    color: #36455d;
+    margin-bottom: 0.35rem;
+}
+@media(max-width: 1075px){
+    .user-detail-container{
+        width: 80%;
+        background-color:#818b862b;
+        height: 360px;
+        margin: auto;
+        box-shadow: 4px 2px 6px 3px #6f75695c;
+    }
+    
+}
+
