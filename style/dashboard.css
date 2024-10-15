@@ -26,7 +26,7 @@
 }
 
 .user-detail-container{
-    width: 30%;
+    width: 40%;
     background-color:#818b862b;
     height: 360px;
     margin: auto;
@@ -35,7 +35,7 @@
 
 .user-detail-text{
     font-size: 21px;
-    color: #36455d;
+    color: #0c3e46;
     margin-bottom: 0.35rem;
 }
 @media(max-width: 1075px){

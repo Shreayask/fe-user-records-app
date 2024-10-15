@@ -9,12 +9,19 @@ $(document).ready(function () {
         const address = $('#address').val();
         const username = $('#username').val();
         const password = $('#password').val();
+        const confirmPassword = $('#confirmpassword').val();
+
         const gender = $('input[name="gender"]:checked').val();
 
         //validation for user form
-        if (!name || !email || !number || !address || !username || !password || !gender) {
+        if (!name || !email || !number || !address || !username || !password || !gender || !confirmPassword) {
            $('#error-msg').text('All fields are required.')
             return; 
+        }
+
+        if(password !== confirmPassword){        
+                $('#error-msg').text('Passwords do not match.')
+                return;         
         }
 
         if (password.length < 8) {
