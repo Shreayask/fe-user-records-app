@@ -2,10 +2,13 @@ $(document).ready(function () {
 
 
     // Fetching users from API
-    axios.get('https://be-user-record-app.onrender.com/getUsers')
+    function fetchUsers(){
+        axios.get('https://be-user-record-app.onrender.com/getUsers')
         .then(function (response) {
             const users = response.data.data;
             $('#user-count').text(`${users.length}`)
+            $('.table tbody').empty();
+
             if (users.length < 1) {
                 const userRow = `
                         <tr class="user-row">
@@ -23,7 +26,8 @@ $(document).ready(function () {
                             <th scope="row">${index + 1}</th>
                             <td>${user.name}</td>
                             <td>${user.email}</td>
-                            <td><span style='margin-left:2rem;cursor:pointer' id='view-button' data-user-id=${user._id}><i class="bi bi-eye-fill" style='color: #2a69c5;'></i></span></td>
+                            <td><span style='margin-left:2rem;cursor:pointer' id='view-button' data-user-id=${user._id}><i class="bi bi-eye-fill" style='color: #2a69c5;'></i></span>
+                            <span style='margin-left:2rem;cursor:pointer' id='delete-button' data-user-id=${user._id}><i class="bi bi-trash3-fill" style='color: #bd0909;'></i></span></td>
                         </tr>
                     `;
                 // Append the new row to the table body
@@ -33,10 +37,12 @@ $(document).ready(function () {
         .catch(function (error) {
             console.error('Error fetching users:', error);
         });
+    }
+    fetchUsers()
 
 
     //fetch individual user's detail
-    function fetchUser(userId) {
+    function fetchUserById(userId) {
         const params = { id: userId }
         axios.get('https://be-user-record-app.onrender.com/getUser', { params })
             .then(function (response) {
@@ -55,6 +61,16 @@ $(document).ready(function () {
             })
     }
 
+    //delete user
+    function deleteUser(userid){
+        axios.delete(`https://be-user-record-app.onrender.com/deleteUser/${userid}`)
+        .then(function(response){
+            fetchUsers();
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
     //adding click event to view individual event details
     $('.table tbody').on('click', '#view-button', function () {
         const userId = $(this).data('user-id');
@@ -64,12 +80,11 @@ $(document).ready(function () {
         modal.addClass('modal fade show');
         modal.css('display', 'block');
         modal.attr('aria-modal', 'true');
-        fetchUser(userId);
+        fetchUserById(userId);
     });
 
     //event to close view user modal
     $('.user-modal').on('click', '#close-modal', function () {
-        console.log('mer')
         const modal = $('#view-user-modal');
 
         // Set modal attributes
@@ -78,6 +93,12 @@ $(document).ready(function () {
         modal.removeAttr('aria-modal');
     })
 
+    
+    //delete user
+    $('.table tbody').on('click', '#delete-button', function () {
+        const userId = $(this).data('user-id');
+        deleteUser(userId);
+    });
     $('#logout-btn').click(function () {
         localStorage.removeItem('userId')
         window.location.href = '../index.html'

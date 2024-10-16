@@ -46,16 +46,91 @@
         </div>
 
         </div>
-       <div class="user-detail-container mt-5 p-4">
-<div class="user-detail mt-1 p-5">
-    
+        <div class="user-detail-container mt-5 p-4">
+            <div class="user-detail mt-1 px-4">
+                <div style="text-align: end;cursor: pointer; font-size: 20px;" class="edit-btn">
+                    <i class="bi bi-pencil-square"></i>
+                </div>
+                <div class="user-info" >
 
-</div>
+                </div>
 
-       </div>
+            </div>
+
+        </div>
 
 
     </section>
+
+    <div class="user-modal">
+        <div class="modal" tabindex="-1" id="view-user-modal" style="top:9rem;">
+            <div class="modal-dialog">
+                <div class="modal-content view-user-modal" style="width: 31rem;height: 43rem;">
+                    <div class="modal-header">
+                        <h3>Edit Details</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="close-modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="user-detail-section p-2">
+                            <div class="form-input-section">
+                                <label class="form-label mt-3">Full name</label>
+                                <input type="text" class="form-control" id="name">
+
+                                <label class="form-label mt-3 ">Email</label>
+                                <input type="text" class="form-control" id="email">
+                                <label for="inputPassword5" class="form-label mt-3 ">Gender</label>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="flexRadioDefault1" value="Male" name="gender">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="flexRadioDefault1" value="Female" name="gender">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Female
+                                    </label>
+                                </div>
+                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="flexRadioDefault2" value="Others" name="gender">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Others
+                                    </label>
+                                </div>
+                
+                                <label class="form-label mt-3 ">Phone Number</label>
+                                <input type="text" class="form-control" id="phonenumber">
+                
+                                <label class="form-label mt-3 ">Address</label>
+                                <input type="text" class="form-control" id="address">
+                
+                                <span class="mt-2" id="error-msg" style="color: red; font-size: 14px;"> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" 
+                            id="edit-user">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--Toast message-->
+     <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast align-items-center text-bg-success border-0" id="liveToast" role="alert"
+          aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+               Profile has been updated. </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+              id="close-toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

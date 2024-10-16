@@ -37,6 +37,7 @@
     font-size: 21px;
     color: #0c3e46;
     margin-bottom: 0.35rem;
+    word-wrap:break-word;
 }
 @media(max-width: 1075px){
     .user-detail-container{
