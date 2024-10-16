@@ -1,5 +1,5 @@
 Hosted link : <a href='https://fe-user-records-app.onrender.com/'> https://fe-user-records-app.onrender.com/</a>
-FrontEnd Repository
+FrontEnd Repository hosted in Render.
 Technologies used: HTML, CSS, Bootstrap, JQuery, Axios
 Admin username: admin1, password: admin1234
 Application consists of following modules:
